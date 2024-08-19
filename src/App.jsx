@@ -5,16 +5,20 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Note from "./components/Note";
 
-//* 5. Create a Note.jsx component to show a <div> element with a
-//* <h1> for a title and a <p> for the content.
-//* 6. Make sure that the final website is styled like the example shown here:
-//https://l1pp6.csb.app/
+import notes from "./notes";
 
 export default function App() {
   return (
-    <div className="h-screen bg-zinc-200">
+    <div className="min-h-screen bg-zinc-200 flex flex-col">
       <Header />
-      <Note />
+
+      {/* <Note /> */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  mx-16 mt-5 gap-4 flex-grow">
+        {notes.map((note) => (
+          <Note key={note.key} title={note.title} content={note.content} />
+        ))}
+      </div>
+
       <Footer />
     </div>
   );
