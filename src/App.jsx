@@ -2,8 +2,9 @@ import React from "react";
 
 // Components
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+import AddNote from "./components/AddNote";
 import Note from "./components/Note";
+import Footer from "./components/Footer";
 
 import notes from "./notes";
 
@@ -13,7 +14,11 @@ import notes from "./notes";
 export default function App() {
   return (
     <div className="min-h-screen bg-zinc-200 flex flex-col">
+      {/* Header */}
       <Header />
+
+      {/* Add note */}
+      <AddNote />
 
       {/* <Note /> */}
       <main className="flex-1 mx-16 mt-5 mb-8">
@@ -24,6 +29,7 @@ export default function App() {
         </div>
       </main>
 
+      {/* Footer */}
       <Footer />
     </div>
   );
